@@ -1,0 +1,14 @@
+[
+  {
+    "question_id": "SEBI-T1-01",
+    "tier": 1,
+    "question_text": "Under the SEBI (Prohibition of Insider Trading) Regulations, 2015, what is the statutory monetary threshold and timeline for mandatory disclosure of trades by promoters, directors, or designated persons?",
+    "expected_answer": "Under Regulation 7(2)(a) of SEBI (PIT) Regulations, disclosure is mandatory when the value of securities traded (whether in one transaction or a series of transactions over any calendar quarter) aggregates to a traded value in excess of Rs. 10 Lakhs. The disclosure must be made within 2 trading days of such transaction.",
+    "source_citation": "SEBI (PIT) Regulations, 2015, Regulation 7(2)(a) & 7(2)(b)",
+    "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
+    "known_trap": "N/A",
+    "model": "RAG (gpt-5-nano (OpenAI))",
+    "response": "- Threshold: A traded value in excess of Rs 10 lakh (aggregated over any calendar quarter, in one or more transactions) by a promoter, member of the promoter group, designated person, or director. [3]\n\n- Timeline: Disclosure to the company within two trading days of the transaction, and the company must notify the stock exchange within two trading days of receipt of such disclosure or becoming aware of the information. [3]",
+    "num_retrieved_chunks": 4
+  }
+]

@@ -1,0 +1,50 @@
+SEBI (PROHIBITION OF INSIDER TRADING) REGULATIONS, 2015
+[Updated with Amendments up to 2024]
+
+CHAPTER I: PRELIMINARY
+1. Short Title and Commencement: These regulations may be called the Securities and Exchange Board of India (Prohibition of Insider Trading) Regulations, 2015.
+
+2. Definitions:
+(1)(d) "Connected Person" means any person who is or has during the six months prior to the concerned act been associated with a company, directly or indirectly, in any capacity including by reason of frequent communication with its officers or by being in any contractual, fiduciary or employment relationship or by being a director, officer or an employee of the company or holds any position including a professional or business relationship between himself and the company whether temporary or permanent, that allows such person, directly or indirectly, access to unpublished price sensitive information or is reasonably expected to allow such access.
+Without prejudice to the generality of the foregoing, the persons falling within the following categories shall be deemed to be connected persons unless the contrary is established:
+(i) an immediate relative of connected persons specified in clause (d); or
+(ii) a holding company or associate company or subsidiary company; or
+(iii) an intermediary as specified in section 12 of the Act or an employee or director thereof; or
+(iv) an investment company, trustee company, asset management company or an employee or director thereof; or
+(v) an official of a stock exchange or of clearing corporation or organisation; or
+(vi) a member of board of trustees of a mutual fund or a member of the board of directors of the asset management company of a mutual fund or is an employee thereof; or
+(vii) a member of the board of directors or an employee, of a public financial institution as defined in section 2 (72) of the Companies Act, 2013; or
+(viii) an official or an employee of a self-regulatory organisation recognised or authorized by the Board; or
+(ix) a banker of the company; or
+(x) a concern, firm, trust, Hindu undivided family, company or association of persons wherein a director of a company or his immediate relative or banker of the company, has more than ten per cent of the holding or interest.
+
+(1)(n) "Unpublished Price Sensitive Information" (UPSI) means any information, relating to a company or its securities, directly or indirectly, that is not generally available which upon becoming generally available, is likely to materially affect the price of the securities and shall, ordinarily including but not restricted to, information relating to the following:
+(i) financial results;
+(ii) dividends;
+(iii) change in capital structure;
+(iv) mergers, de-mergers, acquisitions, delistings, disposals and expansion of business and such other transactions;
+(v) changes in key managerial personnel.
+
+CHAPTER II: RESTRICTIONS ON COMMUNICATION AND TRADING BY INSIDERS
+3. Communication or procurement of unpublished price sensitive information:
+(1) No insider shall communicate, provide, or allow access to any unpublished price sensitive information, relating to a company or securities listed or proposed to be listed, to any person including other insiders except where such communication is in furtherance of legitimate purposes, performance of duties or discharge of legal obligations.
+(5) The board of directors or head(s) of the organisation of every person required to handle unpublished price sensitive information shall ensure that a structured digital database (SDD) is maintained containing the nature of UPSI and the names of such persons who have shared the information and also the names of such persons with whom information is shared along with the Permanent Account Number (PAN) or any other identifier authorized by law where PAN is not available.
+
+4. Trading when in possession of unpublished price sensitive information:
+(1) No insider shall trade in securities that are listed or proposed to be listed on a stock exchange when in possession of unpublished price sensitive information.
+
+5. Trading Plans:
+(1) An insider shall be entitled to formulate a trading plan and present it to the compliance officer for approval and public disclosure pursuant to which trades may be carried out on his behalf in accordance with such plan.
+(2) Such trading plan shall:
+(i) not entail commencement of trading on behalf of the insider earlier than six months from the public disclosure of the plan;
+(ii) not entail trading for the period between the twentieth trading day prior to the last day of any financial period for which results are required to be announced by the issuer of the securities and the second trading day after the disclosure of such financial results;
+(iii) entail trading for a period of not less than twelve months.
+
+CHAPTER III: DISCLOSURES OF TRADING BY INSIDERS
+7. Continual Disclosures:
+(2)(a) Every promoter, member of the promoter group, designated person and director of every company shall disclose to the company the number of such securities acquired or disposed of within two trading days of such transaction if the value of the securities traded, whether in one transaction or a series of transactions over any calendar quarter, aggregates to a traded value in excess of ten lakh rupees or such other value as may be specified.
+(2)(b) Every company shall notify the particulars of such trading to the stock exchange on which the securities are listed within two trading days of receipt of the disclosure or from becoming aware of such information.
+
+SCHEDULE B: CODE OF CONDUCT FOR LISTED COMPANIES
+Clause 4(2): Trading window restrictions shall be benchmarked towards the closure of trading window from the end of every quarter till 48 hours after the declaration of financial results.
+Clause 10: The code of conduct shall specify that designated persons who buy or sell any number of securities of the company shall not execute a contra trade (i.e. sell or buy any number of securities) during the next six months following the prior transaction.

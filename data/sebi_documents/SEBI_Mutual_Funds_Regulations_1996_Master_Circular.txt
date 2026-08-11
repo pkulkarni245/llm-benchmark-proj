@@ -1,0 +1,24 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA (MUTUAL FUNDS) REGULATIONS, 1996 & MASTER CIRCULAR 2024
+
+CHAPTER VI: SCHEME OBJECTIVES AND INVESTMENT RESTRICTIONS
+52. Total Expense Ratio (TER) Limits:
+(6)(c) Maximum Total Expense Ratio (TER) for equity-oriented schemes:
+- On the first Rs. 500 Crores of daily net assets: 2.25%
+- On the next Rs. 250 Crores of daily net assets: 2.00%
+- On the next Rs. 1,250 Crores of daily net assets: 1.75%
+- On the next Rs. 3,000 Crores of daily net assets: 1.60%
+- On the next Rs. 5,000 Crores of daily net assets: 1.50%
+- On the balance assets: TER reduction of 0.05% for every increase of Rs. 5,000 Crores.
+
+(6)(d) Maximum Total Expense Ratio (TER) for debt schemes: 2.00% on first Rs. 500 Crores.
+
+ESG THEMATIC FUNDS FRAMEWORK (SEBI Master Circular 2024):
+1. Asset Allocation: Equity schemes under ESG theme must invest at least 80% of total assets in equity shares of companies following specified ESG strategy.
+2. Recognized ESG Strategies: AMC must adopt one of 6 recognized strategies: Exclusion, Integration, Best-in-class, Impact, Sustainable, Transition.
+3. BRSR Core: At least 65% of scheme AUM must be invested in companies reporting Business Responsibility and Sustainability Reporting (BRSR) Core disclosures.
+4. Voting Disclosure: AMCs must disclose voting rationale on all ESG resolutions of investee companies.
+
+REDEMPTION SUSPENSION & LIQUIDITY MANAGEMENT (SEBI Circular 2016 / Master Circular 2024):
+1. Suspension of redemption allowed only during extraordinary circumstances (market closure, operational failure, systemic liquidity crisis).
+2. Maximum suspension period allowed is 10 working days in 90 days.
+3. Prior approval required from Board of AMC and Board of Trustees, with immediate notification to SEBI.

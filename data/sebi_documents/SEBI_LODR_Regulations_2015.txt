@@ -1,0 +1,24 @@
+SEBI (LISTING OBLIGATIONS AND DISCLOSURE REQUIREMENTS) REGULATIONS, 2015
+[Updated with Amendments up to 2024]
+
+REGULATION 17: BOARD OF DIRECTORS
+(1) The board of directors of the listed entity shall have an optimum combination of executive and non-executive directors with at least one woman director and not less than fifty per cent of the board of directors shall comprise non-executive directors. Where the chairperson is non-executive, at least one-third of the board shall comprise independent directors; where the chairperson is executive, at least half shall comprise independent directors.
+(1B) The top 500 listed entities may voluntarily ensure that the Chairperson of the board shall be a non-executive director and not be related to the Managing Director or Chief Executive Officer.
+
+REGULATION 23: RELATED PARTY TRANSACTIONS (RPT)
+(2) All related party transactions and subsequent material modifications shall require prior approval of the audit committee of the listed entity. Only independent members of audit committee shall approve.
+(4) All material related party transactions (exceeding Rs. 1000 Crores or 10% of annual consolidated turnover, whichever is lower) shall require prior approval of the shareholders through ordinary resolution, and no related party shall vote to approve such resolutions whether the entity is a party to the particular transaction or not.
+
+REGULATION 25: INDEPENDENT DIRECTORS
+(2) An independent director shall hold office for a term up to five consecutive years, and is eligible for re-appointment on passing of a special resolution. No independent director shall hold office for more than two consecutive terms (10 years total), but shall be eligible for appointment after expiration of three years (cooling-off period) of ceasing to become an independent director.
+
+REGULATION 30: DISCLOSURE OF MATERIAL EVENTS
+(2) Events specified in Para A of Part A of Schedule III (financial results, M&A, board outcome, auditor changes, fraud) are deemed to be material events and listed entity shall make disclosure without applying any materiality test.
+(3) Events specified in Para B of Part B of Schedule III shall be disclosed based on application of materiality guidelines framed by the board (threshold: 2% of turnover or net worth, or 10% of profit).
+(6) Outcome of Board Meeting considering financial results shall be disclosed within 30 minutes of closure of board meeting. Other material events shall be disclosed within 24 hours (or 12 hours if decision originates from board meeting).
+
+REGULATION 31A: RECLASSIFICATION OF PROMOTERS
+(3) Reclassification of a promoter to public shareholder requires that the promoter does not hold more than 10% voting rights, does not exercise control, does not act as KMP/Director, and is approved by Board, Shareholders (ordinary resolution), and Stock Exchanges.
+
+REGULATION 33: FINANCIAL RESULTS
+(3)(a) Unaudited/audited quarterly financial results shall be submitted to stock exchanges within 45 days from the end of each quarter (60 days for annual audited results for the last quarter).

@@ -1,0 +1,42 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA (SUBSTANTIAL ACQUISITION OF SHARES AND TAKEOVERS) REGULATIONS, 2011
+[Takeover Code - Amended up to 2024]
+
+CHAPTER II: SUBSTANTIAL ACQUISITION OF SHARES, VOTING RIGHTS OR CONTROL
+3. Substantial acquisition of shares or voting rights:
+(1) No acquirer shall acquire shares or voting rights in a target company which taken together with shares or voting rights, if any, held by him and by persons acting in concert with him in such target company, entitle them to exercise twenty-five per cent (25%) or more of the voting rights in such target company unless the acquirer makes a public announcement of an open offer for acquiring shares of such target company in accordance with these regulations.
+(2) No acquirer, who together with persons acting in concert with him, holds shares or voting rights in a target company entitling them to exercise twenty-five per cent (25%) or more of the voting rights in the target company but less than the maximum permissible non-public shareholding (75%), shall acquire within any financial year additional shares or voting rights in that target company entitling them to exercise more than five per cent (5%) of the voting rights, unless the acquirer makes a public announcement of an open offer for acquiring shares of such target company in accordance with these regulations (Creeping Acquisition Limit).
+
+4. Acquisition of Control:
+Irrespective of acquisition or holding of shares or voting rights in a target company, no acquirer shall acquire, directly or indirectly, control over such target company unless the acquirer makes a public announcement of an open offer for acquiring shares of such target company in accordance with these regulations.
+
+6. Voluntary Offer:
+(1) An acquirer, who together with persons acting in concert with him, holds twenty-five per cent (25%) or more shares or voting rights in a target company but less than the maximum permissible non-public shareholding, shall be entitled to voluntarily make a public announcement of an open offer for acquiring shares in accordance with these regulations, subject to their aggregate holding after the acquisition not exceeding the maximum permissible non-public shareholding.
+(2) An acquirer who has acquired shares during the preceding twelve months without making an open offer shall not be eligible to make a voluntary offer.
+
+7. Offer Size:
+(1) The open offer for acquiring shares made under regulation 3 and regulation 4 shall be for at least twenty-six per cent (26%) of total shares of the target company as of tenth working day from the closure of the tendering period.
+
+10. General Exemptions:
+(1) The following acquisitions shall be exempt from the obligation to make an open offer under regulation 3 and regulation 4:
+(a)(i) acquisition pursuant to inter-se transfer of shares amongst immediate relatives;
+(a)(ii) acquisition pursuant to inter-se transfer of shares amongst promoters declared for at least three years;
+(a)(iii) acquisition pursuant to a rights issue up to one's entitlement;
+(b) acquisition in the ordinary course of business by underwriters, stock brokers, market makers;
+(d) acquisition pursuant to resolution plan approved under Section 31 of Insolvency and Bankruptcy Code (IBC), 2016.
+
+13. Timing of Public Announcement:
+(1) The public announcement referred to in regulation 3 and regulation 4 shall be sent to all the stock exchanges on which the shares of the target company are listed on the date of agreeing to acquire shares or voting rights.
+(2) Detailed Public Statement (DPS) shall be published within five working days of the public announcement in all editions of one English national daily, one Hindi national daily and one regional language daily.
+
+17. Escrow Account:
+(1) Not later than two working days prior to the detailed public statement, the acquirer shall create an escrow account towards security for performance of obligations.
+(2) The escrow amount shall be calculated as: 25% of the total consideration payable under the open offer for the first Rs. 500 Crores, and 10% of the balance consideration thereafter.
+
+26. Obligations of the Target Company:
+(1) Upon public announcement of an open offer, the board of directors of the target company shall not, during the offer period:
+(a) alienate any material asset;
+(b) issue or allot any unissued securities or shares (including rights issue), unless approved by special resolution through postal ballot.
+
+31. Disclosure of Pledged Shares:
+(1) The promoter of every target company shall disclose details of shares in such target company encumbered by him or by persons acting in concert with him to the target company and stock exchanges within seven working days from the creation of encumbrance.
+(2) The promoter shall also disclose invocation or release of encumbrance within seven working days.
