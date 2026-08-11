@@ -4,7 +4,7 @@ from pathlib import Path
 
 import gradio as gr
 
-from backend import generate, ingest, vectorstore
+from backend import consensus, faithfulness, generate, hyde, ingest, timeline, vectorstore
 from backend.chunking import split_text
 from backend.config import (
     ANSWER_MODELS,
@@ -67,17 +67,18 @@ def do_reset(embedding_model):
 
 def do_query(question, embedding_model, top_k, hybrid_weight, answer_model):
     if not question.strip():
-        return "<p style='color:#ef4444;'>Please enter a compliance question.</p>", "", ""
+        return "<p style='color:#ef4444;'>Please enter a compliance question.</p>", "", "", "", ""
 
     t0 = time.perf_counter()
     chunks = vectorstore.query(embedding_model, question, int(top_k), hybrid_weight)
     retrieval_ms = (time.perf_counter() - t0) * 1000
 
     if not chunks:
-        chunk_md = "<div style='padding:12px; background:#fef2f2; border-left:4px solid #ef4444; border-radius:4px; color:#991b1b;'><strong>No matching regulatory chunks found in vectorstore.</strong> Make sure documents are ingested in Tab 3.</div>"
-        return chunk_md, "_No context available_", f"Retrieval Latency: {retrieval_ms:.1f} ms"
+        chunk_md = "<div style='padding:12px; background:#fef2f2; border-left:4px solid #ef4444; border-radius:4px; color:#991b1b;'><strong>No matching regulatory chunks found in vectorstore.</strong> Make sure documents are ingested in Tab 4.</div>"
+        return chunk_md, "_No context available_", f"Retrieval Latency: {retrieval_ms:.1f} ms", "", ""
 
     chunk_md_lines = []
+    chunk_texts = [c["text"] for c in chunks]
     for i, c in enumerate(chunks, 1):
         score_badge = f"<span style='background:#dbeafe; color:#1e40af; padding:2px 8px; border-radius:12px; font-weight:600; font-size:12px;'>Relevance: {c['score']:.3f}</span>"
         chunk_md_lines.append(
@@ -88,25 +89,52 @@ def do_query(question, embedding_model, top_k, hybrid_weight, answer_model):
 
     answer = ""
     timing = f"Retrieval Latency: {retrieval_ms:.1f} ms"
+    faithfulness_html = ""
+    timeline_html = ""
+
     if answer_model != "None (retrieval only)":
         if not generate.is_configured(answer_model):
             answer = f"*No API key configured for {answer_model} in .env file — running in retrieval-only mode.*"
         else:
             t1 = time.perf_counter()
-            answer = generate.generate_answer(question, [c["text"] for c in chunks], answer_model)
+            answer = generate.generate_answer(question, chunk_texts, answer_model)
             gen_ms = (time.perf_counter() - t1) * 1000
             timing += f" | Generation ({answer_model}): {gen_ms:.1f} ms"
 
-    return chunk_md, answer, timing
+            # Compute Faithfulness & Hallucination Audit
+            audit_res = faithfulness.audit_faithfulness(answer, chunk_texts)
+            faithfulness_html = audit_res["highlighted_html"]
+
+            # Compute Statutory Action Timeline & Risk Heatmap
+            timeline_res = timeline.extract_timeline_and_risk(answer, question)
+            timeline_html = timeline_res["timeline_html"]
+
+    return chunk_md, answer, timing, faithfulness_html, timeline_html
+
+
+def run_llm_jury_tab(question_text):
+    if not question_text.strip():
+        return "<p>Please enter a compliance question for the LLM Jury bench.</p>"
+    chunks = vectorstore.query(DEFAULT_EMBEDDING_MODEL, question_text, top_k=4, hybrid_weight=0.5)
+    c_texts = [c["text"] for c in chunks]
+    jury_res = consensus.run_llm_jury_consensus(question_text, c_texts)
+    return jury_res["consensus_html"]
+
+
+def run_hyde_tab(question_text, answer_model):
+    if not question_text.strip():
+        return "<p>Please enter a question for HyDE processing.</p>", ""
+    res = hyde.run_hyde_rag_pipeline(question_text, answer_model)
+    return res["hyde_html"], res["final_answer"]
 
 
 def load_benchmark_detail(selected_choice):
     if not selected_choice or not BENCHMARK_DATA:
         return "", "", "", "", ""
-    
+
     idx = QUESTION_CHOICES.index(selected_choice)
     q = BENCHMARK_DATA[idx]
-    
+
     header = f"### [{q['question_id']}] Tier {q['tier']} Question Details\n**Tier Type:** Tier {q['tier']}\n\n**Question:** {q['question_text']}"
     expected = f"**Statutory Expected Answer:**\n{q['expected_answer']}\n\n**Primary Legal Citation:** `{q['source_citation']}`\n**Official Gazette Link:** [{q['source_url']}]({q['source_url']})"
     trap = f"**Known LLM Hallucination Trap:**\n{q['known_trap']}" if q['tier'] == 5 else "*No specific trap defined for this tier.*"
@@ -118,7 +146,6 @@ def run_benchmark_head_to_head(question_text, answer_model_choice):
     if not question_text.strip():
         return "Enter question first.", "Enter question first."
 
-    # 1. Base LLM Response
     t0 = time.perf_counter()
     try:
         base_resp = generate.generate_raw(question_text, answer_model_choice)
@@ -127,7 +154,6 @@ def run_benchmark_head_to_head(question_text, answer_model_choice):
     except Exception as e:
         base_md = f"Error executing Base LLM: {str(e)}"
 
-    # 2. RAG System Response
     t1 = time.perf_counter()
     try:
         chunks = vectorstore.query(DEFAULT_EMBEDDING_MODEL, question_text, top_k=4, hybrid_weight=0.5)
@@ -144,12 +170,12 @@ def run_benchmark_head_to_head(question_text, answer_model_choice):
 
 
 def build_ui(app):
-    with gr.Blocks(title="SEBI Compliance AI Lab") as demo:
+    with gr.Blocks(title="SEBI Compliance AI Lab — WOW Features Enabled") as demo:
         gr.HTML(
             """
             <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #f8fafc; padding: 24px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
                 <h1 style="color: #38bdf8; font-size: 28px; margin-bottom: 6px;">Indian Regulatory Compliance AI: SEBI & Capital Markets</h1>
-                <p style="color: #94a3b8; font-size: 15px;">PGPBA Term 4 Project Lab — Benchmark, Build & Break RAG Compliance Assistant</p>
+                <p style="color: #94a3b8; font-size: 15px;">Enterprise Compliance Lab — Featuring Live Faithfulness Audit, Compliance Timelines, LLM Jury & HyDE</p>
             </div>
             """
         )
@@ -178,10 +204,12 @@ def build_ui(app):
                             label="Hybrid Weight (1 = Dense Vector, 0 = Keyword/BM25)",
                         )
                     query_btn = gr.Button("Search & Generate Compliance Answer", variant="primary")
-                
+
                 with gr.Column(scale=7):
                     timing_out = gr.Markdown()
                     answer_out = gr.Markdown(label="Grounded Compliance Response")
+                    faithfulness_html_out = gr.HTML(label="🛡️ Live Faithfulness & Hallucination Audit")
+                    timeline_html_out = gr.HTML(label="⏱️ Statutory Action Timeline & Risk Heatmap")
                     chunks_out = gr.Markdown(label="Retrieved Regulatory Source Chunks")
 
             query_btn.click(
@@ -193,37 +221,74 @@ def build_ui(app):
                     hybrid_weight_in,
                     answer_model_in,
                 ],
-                outputs=[chunks_out, answer_out, timing_out],
+                outputs=[chunks_out, answer_out, timing_out, faithfulness_html_out, timeline_html_out],
             )
 
-        with gr.Tab("2. Live Benchmark Head-to-Head Comparison"):
+        with gr.Tab("2. 👨‍⚖️ Multi-Model LLM Jury Consensus"):
+            gr.Markdown(
+                "## Multi-Model LLM Jury Bench\n"
+                "Queries **all 3 models (gpt-5-nano, gpt-oss-20b, gemma-3n)** concurrently to evaluate model consensus and highlight cross-model agreement!"
+            )
+            jury_question_in = gr.Textbox(
+                label="Enter Question for LLM Jury Bench",
+                placeholder="e.g. Can a Foreign Portfolio Investor acquire 12% equity in a listed Indian company?",
+                lines=2,
+            )
+            jury_btn = gr.Button("Run Multi-Model LLM Jury Verdict", variant="primary")
+            jury_html_out = gr.HTML(label="LLM Jury Verdict & Consensus Bench")
+
+            jury_btn.click(run_llm_jury_tab, inputs=[jury_question_in], outputs=[jury_html_out])
+
+        with gr.Tab("3. 🧠 HyDE Advanced Retrieval Mode"):
+            gr.Markdown(
+                "## HyDE (Hypothetical Document Embeddings)\n"
+                "Generates a hypothetical legal provision first, then embeds the hypothetical clause to retrieve higher-precision statutory chunks!"
+            )
+            with gr.Row():
+                hyde_question_in = gr.Textbox(
+                    label="Enter Complex Compliance Query",
+                    placeholder="e.g. Explain Cat III AIF leverage limits and borrowing restrictions",
+                    lines=2,
+                )
+                hyde_model_in = gr.Dropdown(
+                    list(ANSWER_MODELS.keys()),
+                    value=DEFAULT_ANSWER_MODEL,
+                    label="LLM Engine",
+                )
+            hyde_btn = gr.Button("Run HyDE Advanced Retrieval RAG", variant="primary")
+            hyde_html_out = gr.HTML(label="HyDE Hypothetical Document & Retrieval Badge")
+            hyde_answer_out = gr.Markdown(label="HyDE Grounded Compliance Answer")
+
+            hyde_btn.click(run_hyde_tab, inputs=[hyde_question_in, hyde_model_in], outputs=[hyde_html_out, hyde_answer_out])
+
+        with gr.Tab("4. Live Benchmark Head-to-Head Comparison"):
             gr.Markdown(
                 "## 50-Question SEBI Benchmark Explorer\n"
-                "Select any of the 50 benchmark questions across Tiers 1–5 to compare **Base LLM Performance vs. RAG System** live!"
+                "Select any benchmark question to compare **Base LLM vs. Grounded RAG** live!"
             )
             with gr.Row():
                 question_dropdown = gr.Dropdown(
                     choices=QUESTION_CHOICES,
                     value=QUESTION_CHOICES[0] if QUESTION_CHOICES else None,
-                    label="Select Benchmark Question from 50-Question Dataset",
+                    label="Select Benchmark Question",
                 )
                 eval_model_choice = gr.Dropdown(
                     choices=list(ANSWER_MODELS.keys()),
                     value=DEFAULT_ANSWER_MODEL,
                     label="LLM Model to Compare",
                 )
-            
+
             with gr.Row():
                 q_header_md = gr.Markdown()
             with gr.Row():
                 q_expected_md = gr.Markdown()
                 q_trap_md = gr.Markdown()
 
-            compare_btn = gr.Button("Run Head-to-Head Comparison (Base LLM vs RAG)", variant="primary")
-            
+            compare_btn = gr.Button("Run Head-to-Head Comparison", variant="primary")
+
             with gr.Row():
                 base_llm_out = gr.Markdown(label="Base LLM Response (Un-augmented)")
-                rag_llm_out = gr.Markdown(label="RAG System Response (Ground-truth Augmented)")
+                rag_llm_out = gr.Markdown(label="RAG System Response (Grounded)")
 
             question_dropdown.change(
                 load_benchmark_detail,
@@ -241,22 +306,22 @@ def build_ui(app):
                 outputs=[base_llm_out, rag_llm_out],
             )
 
-        with gr.Tab("3. Knowledge Base & Document Lab"):
+        with gr.Tab("5. Knowledge Base Management"):
             with gr.Row():
                 with gr.Column():
-                    file_in = gr.File(label="Upload Primary Regulatory Text (.pdf, .docx, .txt)")
+                    file_in = gr.File(label="Upload Regulatory Document (.txt, .pdf)")
                     embedding_model_in = gr.Dropdown(
                         MODEL_CHOICES, value=DEFAULT_EMBEDDING_MODEL, label="Embedding model"
                     )
                     chunk_size_in = gr.Slider(100, 3000, value=800, step=50, label="Chunk size (chars)")
                     chunk_overlap_in = gr.Slider(0, 500, value=100, step=10, label="Chunk overlap (chars)")
                     ingest_btn = gr.Button("Ingest Document into ChromaDB", variant="primary")
-                    reset_btn = gr.Button("Clear All Ingested Documents")
+                    reset_btn = gr.Button("Clear Ingested Documents")
                 with gr.Column():
                     ingest_status = gr.Markdown()
                     docs_table = gr.Dataframe(
                         headers=["filename", "document_id", "num_chunks"],
-                        label="Ingested SEBI Regulations (Active Collection)",
+                        label="Ingested Regulations",
                     )
 
             ingest_btn.click(
