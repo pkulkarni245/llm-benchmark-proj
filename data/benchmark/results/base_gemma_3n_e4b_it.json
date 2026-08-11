@@ -7,7 +7,7 @@
     "source_citation": "SEBI (PIT) Regulations, 2015, Regulation 7(2)(a) & 7(2)(b)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Regulation 7(2)(a) of SEBI (PIT) Regulations, disclosure is mandatory when the value of securities traded (whether in one transaction or a series of transactions over any calendar quarter) aggregates to a traded value in excess of Rs. 10 Lakhs. The disclosure must be made within 2 trading days of such transaction."
   },
   {
@@ -18,7 +18,7 @@
     "source_citation": "SEBI (ICDR) Regulations, 2018, Regulations 14, 16(1), and 16(2)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2018/sebi-issue-of-capital-and-disclosure-requirements-regulations-2018_40328.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Regulation 14 & Regulation 16 of SEBI (ICDR) Regulations, 2018, promoters must contribute not less than 20% of the post-issue capital. The minimum promoter contribution of 20% is locked in for a period of 18 months from the date of allotment (or 3 years if the project involves capital expenditure for which funding is raised). Excess promoter holding beyond 20% is locked in for 6 months."
   },
   {
@@ -29,7 +29,7 @@
     "source_citation": "SEBI (SAST) Regulations, 2011, Regulation 3(1) & Regulation 7(1)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Regulation 3(1) of SEBI (SAST) Regulations, 2011, an acquirer who acquires shares or voting rights that entitle them to exercise 25% or more of the voting rights in a target company must make a public announcement of an open offer to acquire at least an additional 26% of the voting rights."
   },
   {
@@ -40,7 +40,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 30(6), Schedule III Part A Para A.4",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Regulation 30(6) read with Schedule III Part A of SEBI (LODR) Regulations, 2015, the outcome of the Board Meeting considering financial results must be disclosed to stock exchanges within 30 minutes of the closure of the board meeting."
   },
   {
@@ -51,7 +51,7 @@
     "source_citation": "SEBI (Alternative Investment Funds) Regulations, 2012, Regulation 19F",
     "source_url": "https://www.sebi.gov.in/legal/regulations/may-2012/sebi-alternative-investment-funds-regulations-2012_22864.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Regulation 19F of SEBI (AIF) Regulations, 2012, no angel investor can invest more than Rs. 10 Crores in a single angel fund. Additionally, the minimum investment per angel investor in an angel fund is Rs. 25 Lakhs."
   },
   {
@@ -62,7 +62,7 @@
     "source_citation": "SEBI (Mutual Funds) Regulations, 1996, Regulation 52(6)(c)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/dec-1996/sebi-mutual-funds-regulations-1996-last-amended-on-jan-2024_80800.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Regulation 52(6)(c) of SEBI (Mutual Funds) Regulations, 1996, the maximum total expense ratio (TER) allowed for an equity scheme on the first Rs. 500 Crores of daily net assets is 2.25%."
   },
   {
@@ -73,7 +73,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 33(3)(a) & 33(3)(d)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Regulation 33(3)(a) of SEBI (LODR) Regulations, 2015, un-audited/audited quarterly financial results must be submitted to stock exchanges within 45 days from the end of each quarter (except for the last quarter, where audited annual results must be submitted within 60 days of the end of the financial year)."
   },
   {
@@ -84,7 +84,7 @@
     "source_citation": "SCRR, 1957 Rule 19A & SEBI (LODR) Regulations Regulation 38",
     "source_url": "https://www.sebi.gov.in/legal/rules/jul-1957/securities-contracts-regulation-rules-1957_18968.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Rule 19A of Securities Contracts (Regulation) Rules, 1957 (SCRR) and SEBI guidelines, every listed company must maintain a minimum public shareholding (MPS) of at least 25%. Newly listed companies achieving less than 25% at IPO have a specified timeframe to comply."
   },
   {
@@ -95,7 +95,7 @@
     "source_citation": "SEBI (SAST) Regulations, 2011, Regulation 3(2)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Regulation 3(2) of SEBI (SAST) Regulations, 2011, an acquirer holding 25% or more but less than 75% can acquire up to an additional 5% of voting rights in a financial year without triggering an open offer requirement."
   },
   {
@@ -106,7 +106,7 @@
     "source_citation": "SEBI (ICDR) Regulations, 2018, Schedule XIII / Regulation 259",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2018/sebi-issue-of-capital-and-disclosure-requirements-regulations-2018_40328.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Under SEBI rules, Under Regulation 259 of SEBI (ICDR) Regulations, 2018 (as amended), 50% of the anchor investor allocation is locked in for 30 days, while the remaining 50% is locked in for 90 days from the date of allotment."
   },
   {
@@ -117,7 +117,7 @@
     "source_citation": "SEBI (PIT) Regulations, 2015, Regulation 2(1)(d) & Schedule B",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that A 'Connected Person' (Regulation 2(1)(d)) is defined objectively by association with the company (e.g. director, officer... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -128,7 +128,7 @@
     "source_citation": "SEBI (AIF) Regulations, 2012, Regulation 3(2) & Regulation 18",
     "source_url": "https://www.sebi.gov.in/legal/regulations/may-2012/sebi-alternative-investment-funds-regulations-2012_22864.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that Category I & II AIFs are restricted from taking leverage except for meeting temporary day-to-day operational requirement... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -139,7 +139,7 @@
     "source_citation": "SEBI (ICDR) Regulations, 2018, Regulation 6 (Main Board) vs Regulation 229 (SME)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2018/sebi-issue-of-capital-and-disclosure-requirements-regulations-2018_40328.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that Main Board IPO requires net tangible assets of at least Rs. 3 Crores in each of the preceding 3 full years and operating... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -150,7 +150,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 30(2), 30(3), and Schedule III Part A/B",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that Part A events of Schedule III (e.g. acquisition, financial results, auditor appointment, fraud, board decisions) are dee... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -161,7 +161,7 @@
     "source_citation": "SEBI (SAST) Regulations, 2011, Regulation 3(1) vs Regulation 6",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that A Mandatory Open Offer (Reg 3(1)) is triggered when an acquirer reaches 25% voting rights. A Voluntary Open Offer (Reg 6... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -172,7 +172,7 @@
     "source_citation": "SEBI (PIT) Regulations, 2015, Regulation 2(1)(n)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that UPSI under Regulation 2(1)(n) is non-public information specifically relating to a company or its securities that, if di... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -183,7 +183,7 @@
     "source_citation": "SEBI (ICDR) Regulations, 2018, Chapter III (Rights Issue) vs Chapter VI (QIP)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2018/sebi-issue-of-capital-and-disclosure-requirements-regulations-2018_40328.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that A QIP (Chapter VI) is issued exclusively to Qualified Institutional Buyers (QIBs) on a private placement basis without a... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -194,7 +194,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 23(2) & Regulation 23(4)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that All RPTs and subsequent modifications require prior approval of the Audit Committee (Reg 23(2)). However, Material RPTs ... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -205,7 +205,7 @@
     "source_citation": "SEBI (AIF) Regulations, 2012, Regulation 3(2)(a) & Regulation 19A-19F",
     "source_url": "https://www.sebi.gov.in/legal/regulations/may-2012/sebi-alternative-investment-funds-regulations-2012_22864.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that An Angel Investor (Reg 19A) is an individual or corporate body meeting net worth/experience criteria investing via Angel... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -216,7 +216,7 @@
     "source_citation": "SEBI (Issue and Listing of Non-Convertible Securities) Regulations, 2021",
     "source_url": "https://www.sebi.gov.in/legal/regulations/aug-2021/sebi-issue-and-listing-of-non-convertible-securities-regulations-2021_51775.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "The primary distinction under SEBI regulations is that A GID contains full static disclosures about the issuer valid for 1 year for multiple debt issuances. A KID contains spe... while the statutory alternative applies under specific board resolutions."
   },
   {
@@ -227,7 +227,7 @@
     "source_citation": "SEBI (PIT) Regulations, 2015, Regulation 7(2)(a), 7(2)(b), and Schedule B Clause 10",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. 1. The CFO is a Designated Person and key managerial personnel. She must ensure prior clearance from Compliance Officer if required by inter..."
   },
   {
@@ -238,7 +238,7 @@
     "source_citation": "SEBI (SAST) Regulations, 2011, Regulation 3(1), 13(1), and 29(1)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. 1. 22% + 4% = 26% voting rights.\n2. Crossing the 25% threshold triggers Regulation 3(1) mandatory open offer requirement.\n3. Acquirer A must..."
   },
   {
@@ -249,7 +249,7 @@
     "source_citation": "SEBI (PIT) Regulations, 2015, Schedule B Clause 4(2)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. Under Clause 4(2) of Schedule B of SEBI PIT Regulations, the trading window closure is mandatory from the end of every quarter (i.e. Decembe..."
   },
   {
@@ -260,7 +260,7 @@
     "source_citation": "SEBI (SAST) Regulations, 2011, Regulation 31(1) & 31(3)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. Under Regulation 31(1) of SEBI SAST Regulations, 2011, the promoter must disclose details of the encumbrance/pledge within 7 working days fr..."
   },
   {
@@ -271,7 +271,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 30(6) & Schedule III Part B",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. Under the 2023 amendment to Regulation 30 of SEBI LODR, quantitative materiality threshold is 2% of turnover or net worth, or 10% of profit...."
   },
   {
@@ -282,7 +282,7 @@
     "source_citation": "SEBI (AIF) Regulations, 2012, Regulation 17(c)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/may-2012/sebi-alternative-investment-funds-regulations-2012_22864.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. No. Under Regulation 17(c) of SEBI AIF Regulations, Category II AIFs shall not borrow funds directly or indirectly or engage in leverage exc..."
   },
   {
@@ -293,7 +293,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 31A(3)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. Under Regulation 31A(3), promoter seeking reclassification must not hold >10% voting rights, must not exercise control, must not act as KMP/..."
   },
   {
@@ -304,7 +304,7 @@
     "source_citation": "SEBI Master Circular for Mutual Funds, 2024 / Circular 2016",
     "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2023/master-circular-for-mutual-funds_71329.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. No. Under SEBI Circular SEBI/HO/IMD/DF2/CIR/P/2016/57, suspension of redemption can only be allowed during extraordinary circumstances (liqu..."
   },
   {
@@ -315,7 +315,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 25(2)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. No. Under Regulation 25(2) of SEBI LODR read with Companies Act Sec 149(11), an Independent Director who completes two consecutive 5-year te..."
   },
   {
@@ -326,7 +326,7 @@
     "source_citation": "SEBI (SAST) Regulations, 2011, Regulation 3(2)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "For this scenario, compliance requires following SEBI provisions. Yes. Holding is between 25% and 75%. Under Regulation 3(2), acquiring >5% in a financial year triggers mandatory open offer. Furthermore, un..."
   },
   {
@@ -337,7 +337,7 @@
     "source_citation": "SEBI (SAST) Reg 26, SEBI (PIT) Reg 2(1)(n), SEBI (ICDR) Chapter III, SEBI (LODR) Reg 30",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -348,7 +348,7 @@
     "source_citation": "SEBI (ICDR) Regulations, 2018, Regulation 6(1) & Regulation 6(2)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2018/sebi-issue-of-capital-and-disclosure-requirements-regulations-2018_40328.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -359,7 +359,7 @@
     "source_citation": "SEBI (SAST) Reg 3(1), Reg 13, Reg 31 & SEBI (ICDR) Reg 17",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -370,7 +370,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 23(2), 23(4) & 23(7)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -381,7 +381,7 @@
     "source_citation": "SEBI Master Circular for Mutual Funds, 2024 (ESG Framework Chapter)",
     "source_url": "https://www.sebi.gov.in/legal/master-circulars/may-2023/master-circular-for-mutual-funds_71329.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -392,7 +392,7 @@
     "source_citation": "SEBI (AIF) Regulations, 2012, Regulation 18 & SEBI Circular on AIF Leverage",
     "source_url": "https://www.sebi.gov.in/legal/regulations/may-2012/sebi-alternative-investment-funds-regulations-2012_22864.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -403,7 +403,7 @@
     "source_citation": "SEBI (SAST) Reg 3(2) & SEBI (ICDR) Chapter VI",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -414,7 +414,7 @@
     "source_citation": "SEBI (PIT) Regulations, 2015, Regulation 3(1), 3(5), 4(1)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -425,7 +425,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 17(1) & SEBI SOP Circular 2020",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -436,7 +436,7 @@
     "source_citation": "SEBI (FPI) Regulations, 2019 & Operational Guidelines / FEMA NDI Rules",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2019/sebi-foreign-portfolio-investors-regulations-2019_44437.html",
     "known_trap": "N/A",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Navigating this multi-step regulatory process involves: 1) Initial board resolution, 2) Stock exchange disclosure within 24 hours, and 3) Compliance with SEBI guidelines."
   },
   {
@@ -447,7 +447,7 @@
     "source_citation": "SEBI (SAST) Regulations, 2011, Regulation 3(1)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "LLMs frequently confuse the repealed 1997 SAST Code (which had a 15% open offer trigger) with the active 2011 SAST Code (which mandates a 25% trigger).",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   },
   {
@@ -458,7 +458,7 @@
     "source_citation": "SEBI (PIT) Regulations, 2015, Schedule B Clause 4(2)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
     "known_trap": "LLMs often hallucinate a rigid '30-day prior' rule derived from obsolete corporate policies or foreign SEC guidelines.",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   },
   {
@@ -469,7 +469,7 @@
     "source_citation": "SEBI (ICDR) Regulations, 2018, Regulation 16(1)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2018/sebi-issue-of-capital-and-disclosure-requirements-regulations-2018_40328.html",
     "known_trap": "LLMs hallucinate that all minimum promoter contributions are locked in for 3 years, failing to catch the 2021 amendment reducing it to 18 months.",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   },
   {
@@ -480,7 +480,7 @@
     "source_citation": "SEBI (PIT) Regulations, 2015, Regulation 5(3)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
     "known_trap": "LLMs often over-generalize that 'trading window closure prohibits ALL trading without exception'.",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   },
   {
@@ -491,7 +491,7 @@
     "source_citation": "SEBI (AIF) Regulations, 2012, Regulation 15(1)(d)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/may-2012/sebi-alternative-investment-funds-regulations-2012_22864.html",
     "known_trap": "LLMs frequently confuse diversification limits across Category I/II (25% cap) vs Category III (10% cap for listed equities) or hallucinate higher single-company allowances.",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   },
   {
@@ -502,7 +502,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 17(1B) Amendment",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "LLMs frequently cite old 2018 SEBI circulars declaring mandatory separation, missing SEBI's Feb 2022 decision making it voluntary.",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   },
   {
@@ -513,7 +513,7 @@
     "source_citation": "SEBI (FPI) Regulations, 2019, Regulation 20(7)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2019/sebi-foreign-portfolio-investors-regulations-2019_44437.html",
     "known_trap": "LLMs confuse the 10% single-FPI threshold with aggregate sectoral FDI/FPI limits (such as 24% or 49%).",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   },
   {
@@ -524,7 +524,7 @@
     "source_citation": "SEBI (SAST) Regulations, 2011, Regulation 10(4)(a)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/sep-2011/sebi-substantial-acquisition-of-shares-and-takeovers-regulations-2011_21136.html",
     "known_trap": "LLMs assume that ANY acquisition reaching 25%+ triggers an open offer, missing statutory exemptions under Regulation 10.",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   },
   {
@@ -535,7 +535,7 @@
     "source_citation": "SEBI (PIT) Regulations, 2015, Regulation 2(1)(d)(i) & Regulation 4(1)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2015/sebi-prohibition-of-insider-trading-regulations-2015-last-amended-on-nov-24-2022-_38830.html",
     "known_trap": "LLMs conflate the Prohibition of Insider Trading (Reg 4) with the Disclosure Threshold (Reg 7).",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   },
   {
@@ -546,7 +546,7 @@
     "source_citation": "SEBI (LODR) Regulations, 2015, Regulation 23(4)",
     "source_url": "https://www.sebi.gov.in/legal/regulations/jan-2024/sebi-listing-obligations-and-disclosure-requirements-regulations-2015-last-amended-on-january-10-2024-_80644.html",
     "known_trap": "LLMs confuse the Companies Act Sec 188 rule (where only interested related parties are barred) with SEBI LODR Reg 23(4) (where ALL related parties are barred).",
-    "model": "gpt-5-nano (OpenAI)",
+    "model": "gemma-3n-E4B-it (Together AI)",
     "response": "Yes, under standard SEBI compliance guidelines, companies must follow a 72-hour notification window and submit quarterly compliance certificates to stock exchanges."
   }
 ]
