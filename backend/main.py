@@ -1,112 +1,109 @@
+"""FastAPI Backend Entrypoint with Embedded Gradio App.
+
+Allows running directly via `python3 -m backend.main` or `python backend/main.py`
+to launch and expose the web application on http://localhost:7860/
+"""
+import os
 import time
+from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from pydantic import BaseModel
 
 load_dotenv()
 
 from backend import generate, ingest, vectorstore
 from backend.chunking import split_text
-from backend.config import (
-    ANSWER_MODELS,
-    DEFAULT_ANSWER_MODEL,
-    DEFAULT_EMBEDDING_MODEL,
-    EMBEDDING_MODELS,
-)
-from backend.schemas import (
-    DocumentInfo,
-    IngestResponse,
-    QueryRequest,
-    QueryResponse,
-    RetrievedChunk,
-)
+from backend.config import DEFAULT_ANSWER_MODEL, DEFAULT_EMBEDDING_MODEL
 
-app = FastAPI(title="RAG Skeleton")
+app = FastAPI(title="SEBI & Capital Markets Compliance AI", version="1.0")
 
 
-@app.get("/embedding-models")
-def embedding_models() -> dict:
-    return {"models": list(EMBEDDING_MODELS.keys()), "default": DEFAULT_EMBEDDING_MODEL}
+class ChunkResponse(BaseModel):
+    document_id: str
+    filename: str
+    chunk_index: int
+    text: str
+    score: float
 
 
-@app.get("/answer-models")
-def answer_models() -> dict:
-    return {
-        "models": list(ANSWER_MODELS.keys()),
-        "default": DEFAULT_ANSWER_MODEL,
-        "available": {label: generate.is_configured(label) for label in ANSWER_MODELS},
-    }
+class QueryRequest(BaseModel):
+    question: str
+    embedding_model: str = DEFAULT_EMBEDDING_MODEL
+    top_k: int = 4
+    hybrid_weight: float = 0.5
+    answer_model: str = DEFAULT_ANSWER_MODEL
 
 
-@app.post("/documents", response_model=IngestResponse)
-async def upload_document(
+class QueryResponse(BaseModel):
+    chunks: list[ChunkResponse]
+    retrieval_latency_ms: float
+    answer: str = ""
+    generation_latency_ms: float = 0.0
+
+
+@app.get("/api/health")
+def health():
+    return {"status": "ok", "app": "SEBI Compliance AI"}
+
+
+@app.post("/api/ingest")
+async def api_ingest(
     file: UploadFile = File(...),
     embedding_model: str = Form(DEFAULT_EMBEDDING_MODEL),
     chunk_size: int = Form(800),
     chunk_overlap: int = Form(100),
 ):
-    if embedding_model not in EMBEDDING_MODELS:
-        raise HTTPException(400, f"Unknown embedding model: {embedding_model}")
-
-    raw = await file.read()
-    text = ingest.extract_text(file.filename, raw)
+    contents = await file.read()
+    text = ingest.extract_text(file.filename, contents)
     if not text.strip():
-        raise HTTPException(400, "No extractable text found in file")
+        raise HTTPException(400, "No extractable text found in uploaded file.")
 
     chunks = split_text(text, chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     if not chunks:
-        raise HTTPException(400, "Chunking produced no chunks")
+        raise HTTPException(400, "Chunking produced 0 chunks.")
 
-    document_id = vectorstore.new_document_id()
-    vectorstore.add_chunks(embedding_model, document_id, file.filename, chunks)
+    doc_id = vectorstore.new_document_id()
+    vectorstore.add_chunks(embedding_model, doc_id, file.filename, chunks)
 
-    return IngestResponse(
-        document_id=document_id,
-        filename=file.filename,
-        num_chunks=len(chunks),
-        embedding_model=embedding_model,
-        chunk_size=chunk_size,
-        chunk_overlap=chunk_overlap,
-    )
+    return {
+        "filename": file.filename,
+        "document_id": doc_id,
+        "num_chunks": len(chunks),
+        "embedding_model": embedding_model,
+    }
 
 
-@app.get("/documents", response_model=list[DocumentInfo])
-def get_documents(embedding_model: str = DEFAULT_EMBEDDING_MODEL):
-    docs = vectorstore.list_documents(embedding_model)
-    return [DocumentInfo(embedding_model=embedding_model, **d) for d in docs]
+@app.get("/api/documents")
+def api_documents(embedding_model: str = DEFAULT_EMBEDDING_MODEL):
+    return vectorstore.list_documents(embedding_model)
 
 
-@app.delete("/documents/{document_id}")
-def delete_document(document_id: str, embedding_model: str = DEFAULT_EMBEDDING_MODEL):
-    vectorstore.delete_document(embedding_model, document_id)
-    return {"deleted": document_id}
-
-
-@app.post("/reset")
-def reset(embedding_model: str = DEFAULT_EMBEDDING_MODEL):
-    vectorstore.reset_collection(embedding_model)
-    return {"reset": embedding_model}
-
-
-@app.post("/query", response_model=QueryResponse)
-def run_query(req: QueryRequest):
-    if req.embedding_model not in EMBEDDING_MODELS:
-        raise HTTPException(400, f"Unknown embedding model: {req.embedding_model}")
-
+@app.post("/api/query", response_model=QueryResponse)
+def api_query(req: QueryRequest):
     t0 = time.perf_counter()
     raw_chunks = vectorstore.query(
         req.embedding_model, req.question, req.top_k, req.hybrid_weight
     )
     retrieval_ms = (time.perf_counter() - t0) * 1000
 
-    chunks = [RetrievedChunk(**c) for c in raw_chunks]
+    chunks = [
+        ChunkResponse(
+            document_id=c["document_id"],
+            filename=c["filename"],
+            chunk_index=c["chunk_index"],
+            text=c["text"],
+            score=c["score"],
+        )
+        for c in raw_chunks
+    ]
 
-    answer, generation_ms = None, None
-    if req.answer_model:
-        if req.answer_model not in ANSWER_MODELS:
-            raise HTTPException(400, f"Unknown answer model: {req.answer_model}")
+    answer = ""
+    generation_ms = 0.0
+    if req.answer_model and req.answer_model != "None (retrieval only)":
         if not generate.is_configured(req.answer_model):
-            raise HTTPException(400, f"No API key configured for {req.answer_model}")
+            raise HTTPException(400, f"API key for model '{req.answer_model}' not configured in environment.")
         t1 = time.perf_counter()
         answer = generate.generate_answer(req.question, [c.text for c in chunks], req.answer_model)
         generation_ms = (time.perf_counter() - t1) * 1000
@@ -119,7 +116,20 @@ def run_query(req: QueryRequest):
     )
 
 
-# Mount the Gradio UI at the root path, in the same process.
+# Mount the Gradio UI at the root path
 from ui.gradio_app import build_ui  # noqa: E402
 
 build_ui(app)
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", 7860))
+    print(f"\n=======================================================")
+    print(f" Starting SEBI Compliance AI Web Server")
+    print(f" Local URL:   http://127.0.0.1:{port}/")
+    print(f" Network URL: http://{host}:{port}/")
+    print(f"=======================================================\n", flush=True)
+    uvicorn.run(app, host=host, port=port)
