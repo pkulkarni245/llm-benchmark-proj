@@ -12,10 +12,11 @@ An enterprise-grade, retrieval-augmented compliance assistant designed to answer
 4. [Directory & File Map](#-directory--file-map)
 5. [Statutory Knowledge Base Coverage](#-statutory-knowledge-base-coverage)
 6. [50-Question SEBI Benchmark Design](#-50-question-sebi-benchmark-design)
-7. [Installation & Setup](#-installation--setup)
-8. [Running the Application](#-running-the-application)
-9. [Running Benchmark & Evaluation Scripts](#-running-benchmark--evaluation-scripts)
-10. [Submission Deliverables Summary](#-submission-deliverables-summary)
+7. [Dependencies & Technical Stack](#-dependencies--technical-stack)
+8. [Installation & Setup](#-installation--setup)
+9. [Running the Application](#-running-the-application)
+10. [Running Benchmark & Evaluation Scripts](#-running-benchmark--evaluation-scripts)
+11. [Submission Deliverables Summary](#-submission-deliverables-summary)
 
 ---
 
@@ -151,6 +152,24 @@ The evaluation benchmark in `data/benchmark/sebi_benchmark_50.json` is organized
 
 ---
 
+## 📦 Dependencies & Technical Stack
+
+All required Python packages are pinned in [`requirements.txt`](file:///C:/Users/pavan/workspace/iimb/pgai-et/requirements.txt):
+
+| Category | Package | Purpose |
+| :--- | :--- | :--- |
+| **Web Server** | `fastapi>=0.110`, `uvicorn[standard]>=0.27` | High-performance REST API backend |
+| **User Interface** | `gradio>=4.36` | Interactive 3-tab web dashboard & queue engine |
+| **Vector Database** | `chromadb>=0.5.0` | Local persistent embedding database |
+| **Embeddings** | `sentence-transformers>=2.7` | CPU PyTorch dense vector encoder models |
+| **Text Extractors** | `pypdf>=4.2`, `python-docx>=1.1` | Multiformat file parser engine for PDFs and Word docs |
+| **LLM Clients** | `openai>=1.0` | OpenAI & Together AI API client wrappers |
+| **Data & Metrics** | `pandas`, `scikit-learn`, `joblib` | Data analysis, tabular data manipulation, predictive models |
+| **Excel Export** | `openpyxl` | Multi-tab formatted Excel deliverable generator |
+| **Environment** | `python-dotenv>=1.0`, `pydantic>=2.6` | `.env` variable configuration & schema validation |
+
+---
+
 ## 💻 Installation & Setup
 
 ### Prerequisites
@@ -161,8 +180,8 @@ The evaluation benchmark in `data/benchmark/sebi_benchmark_50.json` is organized
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
-   cd pgai-et
+   git clone https://github.com/pkulkarni245/llm-benchmark-proj.git
+   cd llm-benchmark-proj
    ```
 
 2. **Create and activate a virtual environment:**
@@ -176,7 +195,7 @@ The evaluation benchmark in `data/benchmark/sebi_benchmark_50.json` is organized
    source .venv/bin/activate
    ```
 
-3. **Install dependencies:**
+3. **Install all dependencies from requirements.txt:**
    ```bash
    pip install -r requirements.txt
    ```
