@@ -1,0 +1,12 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA (FOREIGN PORTFOLIO INVESTORS) REGULATIONS, 2019
+
+CHAPTER I: PRELIMINARY & CATEGORIZATION
+4. Categories of Foreign Portfolio Investors (FPI):
+(a) Category I FPI: Government and Government-related investors (Central Banks, sovereign wealth funds), pension funds, university funds, regulated entities like banks, asset management companies, investment advisors.
+(b) Category II FPI: Unregulated funds whose investment manager is appropriately regulated, endowed funds, charitable trusts, family offices, corporate bodies.
+
+CHAPTER III: INVESTMENT CONDITIONS AND RESTRICTIONS
+20. Investment Restrictions for FPI:
+(7) Single FPI Limit: The total holding by each Foreign Portfolio Investor or investor group shall be LESS THAN TEN PER CENT (< 10%) of the total paid-up equity capital on a fully diluted basis of the company.
+(8) Reclassification as FDI: Where an FPI along with its investor group acquires 10% or more of the total paid-up equity capital of an Indian company, the FPI shall have an option to divest excess holding within 5 trading days or reclassify the entire investment as Foreign Direct Investment (FDI) subject to FEMA NDI Rules.
+(9) Sectoral Cap: Aggregate FPI limit in an Indian company shall be the applicable sectoral cap under FDI policy (e.g. 74% or 100%).

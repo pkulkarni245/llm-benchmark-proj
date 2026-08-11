@@ -1,0 +1,35 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA (ISSUE OF CAPITAL AND DISCLOSURE REQUIREMENTS) REGULATIONS, 2018
+[Amended up to 2024]
+
+CHAPTER II: INITIAL PUBLIC OFFER ON MAIN BOARD
+6. Entities eligible to make an initial public offer:
+(1) An issuer shall be eligible to make an initial public offer only if:
+(a) it has net tangible assets of at least three crore rupees (Rs. 3 Crores) in each of the preceding three full years (of twelve months each), of which not more than fifty per cent are held in monetary assets;
+(b) it has an average operating profit of at least fifteen crore rupees (Rs. 15 Crores), calculated on a consolidated basis, during the preceding three years;
+(c) it has a net worth of at least one crore rupees (Rs. 1 Crore) in each of the preceding three full years.
+(2) An issuer not satisfying the condition stipulated in sub-regulation (1) may make an initial public offer if the issue is made through the book-building process and the issuer undertakes to allot at least seventy-five per cent (75%) of the net offer to public to Qualified Institutional Buyers (QIBs).
+
+CHAPTER III: PROMOTER CONTRIBUTION AND LOCK-IN
+14. Minimum Promoters' Contribution:
+(1) The promoters of the issuer shall contribute not less than twenty per cent (20%) of the post-issue capital.
+(2) In case of an initial public offer, promoters shall fulfill the minimum promoters' contribution requirement prior to the date of opening of the issue.
+
+16. Lock-in of Specified Securities Held by Promoters:
+(1) The minimum promoters' contribution (20%) shall be locked-in for a period of eighteen months (18 months) from the date of allotment (or three years if the issue involves funding of capital expenditure for a project).
+(2) Promoters' holding in excess of minimum promoter contribution shall be locked-in for a period of six months (6 months) from the date of allotment.
+
+CHAPTER VI: QUALIFIED INSTITUTIONS PLACEMENT (QIP)
+171. A listed issuer may make a qualified institutions placement of equity shares or non-convertible securities to Qualified Institutional Buyers (QIBs) on a private placement basis.
+172. Conditions for QIP:
+(a) Special resolution passed by shareholders approving QIP;
+(b) Equity shares of same class are listed on a stock exchange for at least one year prior to date of notice;
+(c) Allocation to a single QIB shall not exceed fifty per cent (50%) of the issue size;
+(d) Minimum number of allottees: 2 allottees for issue size <= Rs. 250 Crores; 5 allottees for issue size > Rs. 250 Crores.
+
+CHAPTER IX: INITIAL PUBLIC OFFER BY SME PLATFORM
+229. Eligibility for SME IPO:
+(1) An issuer with post-issue face value capital not exceeding twenty-five crore rupees (Rs. 25 Crores) shall be eligible for SME platform listing.
+(2) Net tangible assets of at least Rs. 1.5 Crores, track record of at least 2 years, 100% underwriting required (with market maker underwriting 15%).
+
+259. Anchor Investor Lock-In:
+Fifty per cent (50%) of the allocation to the anchor investor shall be locked-in for a period of thirty days (30 days) from the date of allotment, and the remaining fifty per cent (50%) shall be locked-in for a period of ninety days (90 days).

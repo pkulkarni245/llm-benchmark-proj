@@ -1,0 +1,31 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA (ALTERNATIVE INVESTMENT FUNDS) REGULATIONS, 2012
+[PE & VC Rules - Amended up to 2024]
+
+CHAPTER I: PRELIMINARY & CATEGORIZATION
+3. Categorization of Alternative Investment Funds:
+(1) Category I AIF: AIFs which invest in start-up or early stage ventures or social ventures or infrastructure or SME or other sectors which the government or regulators consider socially or economically desirable (includes Venture Capital Funds, Angel Funds, SME Funds, Social Venture Funds, Infrastructure Funds).
+(2) Category II AIF: AIFs which do not fall in Category I and III and which do not undertake leverage or borrowing other than to meet day-to-day operational requirements (includes Private Equity Funds, Debt Funds).
+(3) Category III AIF: AIFs which employ diverse or complex trading strategies and may employ leverage including through investment in listed or unlisted derivatives (includes Hedge Funds, PIPE Funds).
+
+CHAPTER II: REGISTRATION AND INVESTMENT CONDITIONS
+10. Investment Conditions:
+(a) AIF may raise funds from any investor (Indian, foreign or NRI) by way of issue of units;
+(b) Minimum corpus for Category I, II and III AIF shall be twenty crore rupees (Rs. 20 Crores); provided that for Angel Funds, minimum corpus shall be ten crore rupees (Rs. 10 Crores);
+(c) Minimum investment by an investor in an AIF shall be one crore rupees (Rs. 1 Crore); provided that for employees/directors of AIF/AMC, min investment is Rs. 25 Lakhs.
+
+15. General Investment Conditions:
+(d) Category I and Category II AIFs shall not invest more than twenty-five per cent (25%) of the investible funds in a single Investee Company directly or through associate entities.
+(e) Category III AIFs shall not invest more than ten per cent (10%) of the investible funds in a single Investee Company.
+
+17. Conditions for Category II AIFs:
+(c) Category II AIFs shall not borrow funds directly or indirectly or engage in leverage except for meeting temporary funding requirements for not more than thirty days (30 days) and not more than ten per cent (10%) of investible funds.
+
+18. Conditions for Category III AIFs:
+(2) Category III AIFs may engage in leverage or borrow subject to maximum cap of 2 times the NAV (Net Asset Value) calculated using Gross Absolute Exposure.
+
+CHAPTER III-A: ANGEL FUNDS
+19F. Investment by Angel Funds:
+(1) Angel funds shall raise funds only by way of issue of units to angel investors.
+(2) Minimum investment per angel investor in an angel fund shall be twenty-five lakh rupees (Rs. 25 Lakhs).
+(3) Maximum investment per angel investor in an angel fund shall be ten crore rupees (Rs. 10 Crores).
+(4) Angel fund shall invest in venture capital undertakings which have turnover of less than Rs. 25 Crores and are unlisted.

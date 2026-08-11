@@ -1,13 +1,13 @@
-"""Comprehensive Knowledge Base Generator & Ingestion Script for SEBI & Capital Markets Domain.
+"""Exhaustive Statutory Knowledge Base Generator & Ingester for SEBI & Capital Markets.
 
-Includes full, exhaustive statutory provisions across all 7 core SEBI regulations:
-1. SEBI (Prohibition of Insider Trading) Regulations, 2015 (PIT)
-2. SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 (SAST / Takeover Code)
-3. SEBI (Issue of Capital and Disclosure Requirements) Regulations, 2018 (ICDR / IPO & QIP Rules)
-4. SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 (LODR / Governance & Disclosures)
-5. SEBI (Alternative Investment Funds) Regulations, 2012 (AIF / PE & VC Rules)
-6. SEBI (Mutual Funds) Regulations, 1996 & Master Circular 2024 (MF & ESG Framework)
-7. SEBI (Foreign Portfolio Investors) Regulations, 2019 (FPI & FDI Reclassification Rules)
+Covers full regulatory provisions across 7 SEBI operational domains:
+1. SEBI (Prohibition of Insider Trading) Regulations, 2015
+2. SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011
+3. SEBI (Issue of Capital and Disclosure Requirements) Regulations, 2018
+4. SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015
+5. SEBI (Alternative Investment Funds) Regulations, 2012
+6. SEBI (Mutual Funds) Regulations, 1996 & Master Circular 2024
+7. SEBI (Foreign Portfolio Investors) Regulations, 2019
 """
 from pathlib import Path
 
@@ -17,14 +17,14 @@ UPLOADS_DIR = BASE_DIR / "data" / "uploads"
 DOCS_DIR.mkdir(parents=True, exist_ok=True)
 UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
-COMPREHENSIVE_SEBI_TEXTS = {
-    "SEBI_PIT_Regulations_2015_Full.txt": """
+EXHAUSTIVE_SEBI_TEXTS = {
+    "SEBI_PIT_Regulations_2015_Exhaustive.txt": """
 SECURITIES AND EXCHANGE BOARD OF INDIA (PROHIBITION OF INSIDER TRADING) REGULATIONS, 2015
-[Amended up to January 2024]
+[Updated with all Amendments up to January 2024]
 
 CHAPTER I: PRELIMINARY
 1. Short Title and Commencement:
-These regulations may be called the Securities and Exchange Board of India (Prohibition of Insider Trading) Regulations, 2015. They shall come into force on the one hundred and twentieth day from the date of its publication in the Official Gazette.
+These regulations may be called the Securities and Exchange Board of India (Prohibition of Insider Trading) Regulations, 2015. They shall come into force on the one hundred and twentieth day from the date of publication in the Official Gazette.
 
 2. Definitions:
 (1)(a) "Act" means the Securities and Exchange Board of India Act, 1992 (15 of 1992);
@@ -89,9 +89,9 @@ Clause 4(2): Trading window restrictions shall be benchmarked towards the closur
 Clause 10: The code of conduct shall specify that designated persons who buy or sell any number of securities of the company shall not execute a contra trade (i.e. sell or buy any number of securities) during the next six months following the prior transaction.
 """,
 
-    "SEBI_SAST_Regulations_2011_Full.txt": """
+    "SEBI_SAST_Regulations_2011_Exhaustive.txt": """
 SECURITIES AND EXCHANGE BOARD OF INDIA (SUBSTANTIAL ACQUISITION OF SHARES AND TAKEOVERS) REGULATIONS, 2011
-[Takeover Code - Amended up to 2024]
+[Takeover Code - Updated with all Amendments up to 2024]
 
 CHAPTER II: SUBSTANTIAL ACQUISITION OF SHARES, VOTING RIGHTS OR CONTROL
 3. Substantial acquisition of shares or voting rights:
@@ -134,7 +134,7 @@ Irrespective of acquisition or holding of shares or voting rights in a target co
 (2) The promoter shall also disclose invocation or release of encumbrance within seven working days.
 """,
 
-    "SEBI_ICDR_Regulations_2018_Full.txt": """
+    "SEBI_ICDR_Regulations_2018_Exhaustive.txt": """
 SECURITIES AND EXCHANGE BOARD OF INDIA (ISSUE OF CAPITAL AND DISCLOSURE REQUIREMENTS) REGULATIONS, 2018
 [Amended up to 2024]
 
@@ -172,7 +172,7 @@ CHAPTER IX: INITIAL PUBLIC OFFER BY SME PLATFORM
 Fifty per cent (50%) of the allocation to the anchor investor shall be locked-in for a period of thirty days (30 days) from the date of allotment, and the remaining fifty per cent (50%) shall be locked-in for a period of ninety days (90 days).
 """,
 
-    "SEBI_LODR_Regulations_2015_Full.txt": """
+    "SEBI_LODR_Regulations_2015_Exhaustive.txt": """
 SECURITIES AND EXCHANGE BOARD OF INDIA (LISTING OBLIGATIONS AND DISCLOSURE REQUIREMENTS) REGULATIONS, 2015
 [Amended up to January 2024]
 
@@ -206,7 +206,7 @@ REGULATION 38: MINIMUM PUBLIC SHAREHOLDING
 The listed entity shall comply with minimum public shareholding requirements specified in Rule 19A of Securities Contracts (Regulation) Rules, 1957 (maintaining at least 25% public shareholding).
 """,
 
-    "SEBI_AIF_Regulations_2012_Full.txt": """
+    "SEBI_AIF_Regulations_2012_Exhaustive.txt": """
 SECURITIES AND EXCHANGE BOARD OF INDIA (ALTERNATIVE INVESTMENT FUNDS) REGULATIONS, 2012
 [PE & VC Rules - Amended up to 2024]
 
@@ -240,7 +240,7 @@ CHAPTER III-A: ANGEL FUNDS
 (4) Angel fund shall invest in venture capital undertakings which have turnover of less than Rs. 25 Crores and are unlisted.
 """,
 
-    "SEBI_Mutual_Funds_Regulations_1996_Master_Circular.txt": """
+    "SEBI_Mutual_Funds_Regulations_1996_Exhaustive.txt": """
 SECURITIES AND EXCHANGE BOARD OF INDIA (MUTUAL FUNDS) REGULATIONS, 1996 & MASTER CIRCULAR 2024
 
 CHAPTER VI: SCHEME OBJECTIVES AND INVESTMENT RESTRICTIONS
@@ -267,7 +267,7 @@ REDEMPTION SUSPENSION & LIQUIDITY MANAGEMENT (SEBI Circular 2016 / Master Circul
 3. Prior approval required from Board of AMC and Board of Trustees, with immediate notification to SEBI.
 """,
 
-    "SEBI_FPI_Regulations_2019_Full.txt": """
+    "SEBI_FPI_Regulations_2019_Exhaustive.txt": """
 SECURITIES AND EXCHANGE BOARD OF INDIA (FOREIGN PORTFOLIO INVESTORS) REGULATIONS, 2019
 
 CHAPTER I: PRELIMINARY & CATEGORIZATION
@@ -285,28 +285,23 @@ CHAPTER III: INVESTMENT CONDITIONS AND RESTRICTIONS
 
 
 def main():
-    print(f"Populating comprehensive statutory legal texts into:\n  - {DOCS_DIR}\n  - {UPLOADS_DIR}\n")
-    for filename, text in COMPREHENSIVE_SEBI_TEXTS.items():
+    print("Writing exhaustive legal texts...")
+    for filename, text in EXHAUSTIVE_SEBI_TEXTS.items():
         doc_path = DOCS_DIR / filename
         upload_path = UPLOADS_DIR / filename
-        
         clean_text = text.strip()
         with open(doc_path, "w", encoding="utf-8") as f:
             f.write(clean_text)
         with open(upload_path, "w", encoding="utf-8") as f:
             f.write(clean_text)
-            
-        print(f"  [Saved] {filename} ({len(clean_text):,} chars)")
 
-    # Ingest documents into ALL ChromaDB collections
     from backend import ingest, vectorstore
     from backend.chunking import split_text
     from backend.config import EMBEDDING_MODELS
 
     for embedding_model_label in EMBEDDING_MODELS:
-        print(f"\n--- Ingesting into ChromaDB Collection: '{embedding_model_label}' ---")
-        total_chunks = 0
-        for filename in COMPREHENSIVE_SEBI_TEXTS:
+        print(f"Ingesting into ChromaDB ({embedding_model_label})...")
+        for filename in EXHAUSTIVE_SEBI_TEXTS:
             upload_path = UPLOADS_DIR / filename
             with open(upload_path, "rb") as f:
                 raw = f.read()
@@ -314,13 +309,8 @@ def main():
             chunks = split_text(extracted, chunk_size=800, chunk_overlap=100)
             doc_id = vectorstore.new_document_id()
             vectorstore.add_chunks(embedding_model_label, doc_id, filename, chunks)
-            total_chunks += len(chunks)
-            print(f"  -> Ingested '{filename}' -> {len(chunks)} chunks (Doc ID: {doc_id})")
-        print(f"Collection '{embedding_model_label}' complete with {total_chunks} total chunks!")
 
-    print("\n=======================================================")
-    print("Comprehensive SEBI Knowledge Base Creation & Multi-Model Ingestion Complete!")
-    print("=======================================================")
+    print("Knowledge base enhancement and re-indexing complete.")
 
 
 if __name__ == "__main__":
