@@ -3,6 +3,7 @@
 Queries all 3 models (gpt-5-nano, gpt-oss-20b, gemma-3n) concurrently,
 evaluates cross-model agreement, and highlights consensus vs divergence areas.
 """
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import TypedDict
 
@@ -57,7 +58,6 @@ def run_llm_jury_consensus(question_text: str, context_chunks: list[str]) -> Jur
     opinions.sort(key=lambda x: x["model_key"])
 
     # Determine Consensus Status
-    # Inspect numerical keywords across responses
     resp_texts = [op["response"].lower() for op in opinions]
 
     nums_0 = set(re.findall(r"\b\d+\b", resp_texts[0])) if len(resp_texts) > 0 else set()
@@ -85,6 +85,7 @@ def run_llm_jury_consensus(question_text: str, context_chunks: list[str]) -> Jur
     # Render Side-by-Side Jury HTML
     columns_html = []
     for op in opinions:
+        formatted_resp = op["response"].replace("\n", "<br>")
         col = (
             f'<div style="flex: 1; min-width: 260px; background: #ffffff; border: 1px solid #dadce0; '
             f'border-radius: 8px; padding: 14px; margin: 4px;">'
@@ -92,7 +93,7 @@ def run_llm_jury_consensus(question_text: str, context_chunks: list[str]) -> Jur
             f'⚖️ {op["model_name"]}'
             f'</div>'
             f'<div style="font-size: 0.9em; color: #3c4043; line-height: 1.6; max-height: 280px; overflow-y: auto;">'
-            f'{op["response"].replace("\n", "<br>")}'
+            f'{formatted_resp}'
             f'</div>'
             f'</div>'
         )
