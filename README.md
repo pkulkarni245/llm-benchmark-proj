@@ -14,7 +14,7 @@ An enterprise-grade, retrieval-augmented compliance assistant designed to answer
 6. [50-Question SEBI Benchmark Design](#-50-question-sebi-benchmark-design)
 7. [Dependencies & Technical Stack](#-dependencies--technical-stack)
 8. [Installation & Setup](#-installation--setup)
-9. [Running the Application](#-running-the-application)
+9. [Running the Application (1-Click Auto Launch)](#-running-the-application-1-click-auto-launch)
 10. [Running Benchmark & Evaluation Scripts](#-running-benchmark--evaluation-scripts)
 11. [Submission Deliverables Summary](#-submission-deliverables-summary)
 
@@ -117,6 +117,8 @@ pgai-et/
 │   └── evaluate_sebi_benchmark.py             # Batch benchmark evaluator runner
 ├── predictive/                                # Isolated directory for predictive ML models
 │   └── .gitkeep
+├── run.bat                                    # 1-Click Windows automatic launcher script
+├── run.sh                                     # 1-Click Linux/macOS automatic launcher script
 ├── .env                                       # Environment variables & API keys
 ├── requirements.txt                           # Python project dependencies
 └── README.md                                  # Complete project documentation
@@ -209,15 +211,22 @@ All required Python packages are pinned in [`requirements.txt`](file:///C:/Users
 
 ---
 
-## 🚀 Running the Application
+## 🚀 Running the Application (1-Click Auto Launch)
 
-Start the FastAPI application and Gradio web interface:
+For zero-configuration startup, anyone cloning the repository can launch the application with a single click:
 
+### Option A: 1-Click Automated Script (Recommended)
+* **Windows:** Double-click `run.bat` or run `.\run.bat` in CMD/PowerShell.
+* **Linux / macOS:** Run `chmod +x run.sh && ./run.sh`.
+
+*The 1-click script automatically detects Python, creates `.venv` if missing, installs dependencies from `requirements.txt` quietly, and launches the web server.*
+
+### Option B: Manual CLI Launch
 ```bash
 python -m backend.main
 ```
 
-Once started, open your browser and navigate to:
+Once started, navigate to:
 👉 **`http://localhost:7860/`** (or `http://127.0.0.1:7860/`)
 
 ### Using the Interface
