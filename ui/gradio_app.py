@@ -66,15 +66,15 @@ def do_reset(embedding_model):
 
 
 def do_query(question, embedding_model, top_k, hybrid_weight, answer_model):
-    if not question.strip():
-        return "<p style='color:#ef4444;'>Please enter a compliance question.</p>", "", "", "", ""
+    if not question or not question.strip():
+        return "<p style='color:#ef4444;'>Please enter a compliance question in the box above.</p>", "", "", "", ""
 
     t0 = time.perf_counter()
-    chunks = vectorstore.query(embedding_model, question, int(top_k), hybrid_weight)
+    chunks = vectorstore.query(embedding_model, question.strip(), int(top_k), hybrid_weight)
     retrieval_ms = (time.perf_counter() - t0) * 1000
 
     if not chunks:
-        chunk_md = "<div style='padding:12px; background:#fef2f2; border-left:4px solid #ef4444; border-radius:4px; color:#991b1b;'><strong>No matching regulatory chunks found in vectorstore.</strong> Make sure documents are ingested in Tab 4.</div>"
+        chunk_md = "<div style='padding:12px; background:#fef2f2; border-left:4px solid #ef4444; border-radius:4px; color:#991b1b;'><strong>No matching regulatory chunks found in vectorstore.</strong> Make sure documents are ingested in Tab 5.</div>"
         return chunk_md, "_No context available_", f"Retrieval Latency: {retrieval_ms:.1f} ms", "", ""
 
     chunk_md_lines = []
@@ -113,18 +113,18 @@ def do_query(question, embedding_model, top_k, hybrid_weight, answer_model):
 
 
 def run_llm_jury_tab(question_text):
-    if not question_text.strip():
+    if not question_text or not question_text.strip():
         return "<p>Please enter a compliance question for the LLM Jury bench.</p>"
-    chunks = vectorstore.query(DEFAULT_EMBEDDING_MODEL, question_text, top_k=4, hybrid_weight=0.5)
+    chunks = vectorstore.query(DEFAULT_EMBEDDING_MODEL, question_text.strip(), top_k=4, hybrid_weight=0.5)
     c_texts = [c["text"] for c in chunks]
     jury_res = consensus.run_llm_jury_consensus(question_text, c_texts)
     return jury_res["consensus_html"]
 
 
 def run_hyde_tab(question_text, answer_model):
-    if not question_text.strip():
+    if not question_text or not question_text.strip():
         return "<p>Please enter a question for HyDE processing.</p>", ""
-    res = hyde.run_hyde_rag_pipeline(question_text, answer_model)
+    res = hyde.run_hyde_rag_pipeline(question_text.strip(), answer_model)
     return res["hyde_html"], res["final_answer"]
 
 
@@ -143,7 +143,7 @@ def load_benchmark_detail(selected_choice):
 
 
 def run_benchmark_head_to_head(question_text, answer_model_choice):
-    if not question_text.strip():
+    if not question_text or not question_text.strip():
         return "Enter question first.", "Enter question first."
 
     t0 = time.perf_counter()
@@ -170,6 +170,10 @@ def run_benchmark_head_to_head(question_text, answer_model_choice):
 
 
 def build_ui(app):
+    default_q = "What is the mandatory disclosure threshold for promoter insider trading under SEBI PIT Regulations?"
+    default_jury_q = "Can a Foreign Portfolio Investor acquire 12% equity in a listed Indian company?"
+    default_hyde_q = "Explain Category III AIF leverage caps and borrowing restrictions."
+
     with gr.Blocks(title="SEBI Compliance AI Lab — WOW Features Enabled") as demo:
         gr.HTML(
             """
@@ -185,7 +189,8 @@ def build_ui(app):
                 with gr.Column(scale=5):
                     question_in = gr.Textbox(
                         label="Enter SEBI Compliance Question",
-                        placeholder="e.g. What is the mandatory disclosure threshold for promoter insider trading under SEBI PIT?",
+                        value=default_q,
+                        placeholder="Type question here...",
                         lines=3,
                     )
                     with gr.Row():
@@ -231,7 +236,7 @@ def build_ui(app):
             )
             jury_question_in = gr.Textbox(
                 label="Enter Question for LLM Jury Bench",
-                placeholder="e.g. Can a Foreign Portfolio Investor acquire 12% equity in a listed Indian company?",
+                value=default_jury_q,
                 lines=2,
             )
             jury_btn = gr.Button("Run Multi-Model LLM Jury Verdict", variant="primary")
@@ -247,7 +252,7 @@ def build_ui(app):
             with gr.Row():
                 hyde_question_in = gr.Textbox(
                     label="Enter Complex Compliance Query",
-                    placeholder="e.g. Explain Cat III AIF leverage limits and borrowing restrictions",
+                    value=default_hyde_q,
                     lines=2,
                 )
                 hyde_model_in = gr.Dropdown(
