@@ -1,10 +1,11 @@
 import re
 import uuid
+from pathlib import Path
 
 import chromadb
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 
-from backend.config import CHROMA_DIR, EMBEDDING_MODELS
+from backend.config import BASE_DIR, CHROMA_DIR, EMBEDDING_MODELS
 from backend.keyword_search import BM25
 
 _client = chromadb.PersistentClient(path=str(CHROMA_DIR))
@@ -28,6 +29,38 @@ def get_collection(embedding_model_label: str):
     return _collection_cache[embedding_model_label]
 
 
+def _auto_populate_if_empty(embedding_model_label: str) -> None:
+    """Auto-populates vectorstore from data/sebi_documents/ if ChromaDB is empty on Linux/Unix."""
+    docs_dir = BASE_DIR / "data" / "sebi_documents"
+    text_files = list(docs_dir.glob("*.txt")) if docs_dir.exists() else []
+
+    if not text_files:
+        try:
+            from scripts import download_sebi_documents_comprehensive
+            download_sebi_documents_comprehensive.main()
+            return
+        except Exception:
+            pass
+
+    from backend import ingest
+    from backend.chunking import split_text
+
+    print(f"\n⚡ Auto-ingesting SEBI statutory documents into empty collection ({embedding_model_label})...", flush=True)
+    for tf in text_files:
+        try:
+            with open(tf, "rb") as f:
+                raw = f.read()
+            text = ingest.extract_text(tf.name, raw)
+            if text.strip():
+                chunks = split_text(text, chunk_size=800, chunk_overlap=100)
+                if chunks:
+                    doc_id = new_document_id()
+                    add_chunks(embedding_model_label, doc_id, tf.name, chunks)
+        except Exception as e:
+            print(f"Error auto-ingesting {tf.name}: {e}", flush=True)
+    print("✅ Auto-ingestion complete!\n", flush=True)
+
+
 def add_chunks(
     embedding_model_label: str,
     document_id: str,
@@ -45,6 +78,9 @@ def add_chunks(
 
 def list_documents(embedding_model_label: str) -> list[dict]:
     collection = get_collection(embedding_model_label)
+    if collection.count() == 0:
+        _auto_populate_if_empty(embedding_model_label)
+
     result = collection.get(include=["metadatas"])
     docs: dict[str, dict] = {}
     for meta in result["metadatas"]:
@@ -80,12 +116,11 @@ def query(
     collection = get_collection(embedding_model_label)
     count = collection.count()
     if count == 0:
-        return []
+        _auto_populate_if_empty(embedding_model_label)
+        count = collection.count()
+        if count == 0:
+            return []
 
-    # Keyword scoring (BM25) needs the whole corpus for its IDF stats, and
-    # embedding similarity needs the whole corpus too so a strong keyword
-    # match isn't excluded just because it ranked outside the semantic
-    # top-k. Fetch everything, score both ways, then blend per chunk.
     result = collection.query(
         query_texts=[question],
         n_results=count,
@@ -95,7 +130,6 @@ def query(
     docs = result["documents"][0]
     metas = result["metadatas"][0]
     distances = result["distances"][0]
-    # cosine distance -> similarity score in [0, 1] (roughly)
     embedding_scores = [1 - d / 2 for d in distances]
 
     scores = _hybrid_scores(docs, embedding_scores, question, hybrid_weight)
@@ -114,7 +148,6 @@ def query(
 
 
 def _normalize(scores: list[float]) -> list[float]:
-    """Min-max scale to [0, 1] so keyword and embedding scores are comparable."""
     if not scores:
         return scores
     lo, hi = min(scores), max(scores)
@@ -129,10 +162,6 @@ def _hybrid_scores(
     question: str,
     hybrid_weight: float,
 ) -> list[float]:
-    """Blend normalized embedding similarity and BM25 keyword scores.
-
-    hybrid_weight slides the balance between the two: 1.0 = pure embedding,
-    0.0 = pure keyword."""
     keyword_scores = BM25(docs).scores(question)
     sem_norm = _normalize(embedding_scores)
     kw_norm = _normalize(keyword_scores)
